@@ -1,0 +1,23 @@
+// CODIGO TESTE PARA O BOTÂO (eventualmente sensor de toque)
+
+int estadobotao = 0;
+
+void setup()
+{
+  pinMode(0, INPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  estadobotao = digitalRead(2); // ler estadobotao
+  
+  if(estadobotao == HIGH)
+  {
+    digitalWrite(13, HIGH);
+  } else {
+    digitalWrite(13, LOW);
+  }
+  
+  delay(15); //somente para melhorar a simulação
+}
