@@ -1,6 +1,6 @@
 # Projeto-Braille
 
-###Leitor Tátil de Braille de baixo custo  <br>
+### Leitor Tátil de Braille de baixo custo  <br>
 Projeto elaborado por estudantes do programa Talento Metrópole/IMD.
 
 ## Equipe
