@@ -19,13 +19,15 @@ const int ledpin3 =  10;
 const int ledpin4 =  11;
 const int ledpin5 =  12;
 const int ledpin6 = 13;
+const int button1 = 2;
 
 // VARIABLES:
-
+int button1state = 0;
 char choice;
-int wipe;
 
 void setup() {
+  // initialize the BUTTON pin as input:
+  pinMode(button1, INPUT);
   // initialize the LED pin as an output:
   pinMode(ledpin1, OUTPUT);
   pinMode(ledpin2, OUTPUT);
@@ -41,7 +43,7 @@ void on(int pin) {
   digitalWrite(pin, HIGH);
 }
 
-void ooff(int pin) {
+void oof(int pin) {
   digitalWrite(pin, LOW);
 }
 
@@ -53,7 +55,6 @@ void off() {
   digitalWrite(ledpin5, LOW);
   digitalWrite(ledpin6, LOW);
 }
-
 void letters(){
   if (choice == 'A') {
     Serial.println(choice);
@@ -180,22 +181,99 @@ void letters(){
     on(10);
     on(12);
   }
+  else if (choice == 'S'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(9);
+    on(13);
+  }
+  else if (choice == 'T'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(9);
+    on(12);
+    on(13);
+  }
+  else if (choice == 'U'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(10);
+    on(11);
+  }
+  else if (choice == 'V'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(9);
+    on(10);
+    on(11);
+  }
+  else if (choice == 'W'){
+    Serial.println(choice);
+    off();
+    on(9);
+    on(11);
+    on(12);
+    on(13);
+  }
+  else if (choice == 'X'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(10);
+    on(11);
+    on(13);
+  }
+  else if (choice == 'Y'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(10);
+    on(11);
+    on(12);
+    on(13);
+  }
+  else if (choice == 'Z'){
+    Serial.println(choice);
+    off();
+    on(8);
+    on(10);
+    on(11);
+    on(12);
+  }
   
-  else if (wipe == 0){
-    Serial.println(choice); 
+  else if (choice == '0'){
+    Serial.println(choice );
+    off();
+  }
+  else if (choice == '1') {
+    Serial.println(choice);
     on(8);
     on(9);
     on(10);
     on(11);
     on(12);
     on(13);
+    
   }
 }
 
+// Better way of doing it: Matrizes so you can keep some lights already on
 void loop() {
-  while(Serial.available() == 0) {
+  button1state = digitalRead(button1);
+  while(Serial.available() > 0) {
+    choice = Serial.read();
+    letters();
+  if (button1state == HIGH){
+  Serial.println("ALTO");
   }
-  choice = Serial.read();
-  wipe = Serial.parseInt();
-  letters();
-  }
+ }
+
+
+
+
+
+}
