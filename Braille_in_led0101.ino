@@ -1,15 +1,4 @@
-// TIME OUT CORNER
-//pinMode(buttonPin, INPUT);     // initialize the pushbutton pin as an input:
-// int buttonState = 0;         // variable for reading the pushbutton status
-// read the state of the pushbutton value:
-// buttonState = digitalRead(buttonPin);
-//   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-//  if (buttonState == HIGH) {
-// turn LED on:
-//    digitalWrite(ledPin, HIGH);
-//  } else {
-// turn LED off:
-//    digitalWrite(ledPin, LOW);
+//    - 18/04/2024 -
 
 // CONSTANTS:
 
